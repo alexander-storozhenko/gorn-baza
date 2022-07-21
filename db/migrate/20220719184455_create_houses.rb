@@ -4,6 +4,7 @@ class CreateHouses < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :caption
       t.string :price
+      t.text :full_caption
 
       t.timestamps
     end

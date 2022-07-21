@@ -3,10 +3,13 @@ module API
     class HouseEntity < Grape::Entity
       root :houses, :house
 
+      expose :id
       expose :name
       expose :caption
+      expose :full_caption
       expose :price
-      expose :image_url
+      expose :image_urls
+      expose :avatar_url
     end
   end
 end

@@ -1,13 +1,12 @@
 require_relative 'index'
-require_relative 'get'
 
 module API
-  module Houses
+  module Gallery
     class Root < Grape::API
-      namespace 'houses' do
+      namespace 'gallery' do
         mount Index
-        mount Get
       end
     end
   end
 end
+

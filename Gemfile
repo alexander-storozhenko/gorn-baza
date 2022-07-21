@@ -62,3 +62,7 @@ gem "pg", "~> 1.4"
 gem "rails_admin", "~> 3.0"
 
 gem "grape-entity", "~> 0.10.1"
+
+gem "rack-cors", "~> 1.1"
+
+gem "image_processing", "~> 1.12"
