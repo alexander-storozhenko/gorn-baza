@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Dir[Rails.root + "db/fixtures/captchas/*"].each do |c|
+  content = File.basename(c, File.extname(c))
+  ca = Captcha.create!(content: content)
+  ca.image.attach(io: File.open(c), filename: 'captcha.png')
+end
