@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Dir[Rails.root + "db/fixtures/captchas/*"].each do |c|
+  Captcha.destroy_all
+
   content = File.basename(c, File.extname(c))
   ca = Captcha.create!(content: content)
   ca.image.attach(io: File.open(c), filename: 'captcha.png')
