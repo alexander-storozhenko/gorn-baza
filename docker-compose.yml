@@ -6,7 +6,7 @@ volumes:
 
 services:
   app:
-#    image: postgres:14
+    #    image: postgres:14
     command: rails server -b 0.0.0.0
     build:
       context: .
@@ -15,9 +15,17 @@ services:
       - db
     ports:
       - 3000:3000
+    environment:
+      DB_USER: root
+      DB_PASSWORD: root
   db:
-    image: postgres:14
+    image: postgres
     volumes:
       - db:/var/lib/postgresql/data
+    user: postgres
     ports:
       - 5432:5432
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root

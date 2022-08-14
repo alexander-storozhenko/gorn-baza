@@ -1,17 +1,25 @@
 development:
   adapter: postgresql
+  host: 172.17.0.1
   encoding: unicode
   database: gorn_db_dev
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   pool: 5
 
 test:
   adapter: postgresql
+  host: 172.17.0.1
   encoding: unicode
   database: gorn_db_test
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
   database: gorn_db
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   pool: 5
