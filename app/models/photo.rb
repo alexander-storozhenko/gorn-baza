@@ -1,7 +1,8 @@
 class Photo < ApplicationRecord
+  include Urls
   has_one_attached :image
 
   def image_url
-    Rails.application.routes.url_helpers.url_for(image)
+    attachment_url(image)
   end
 end

@@ -1,4 +1,5 @@
 class Captcha < ApplicationRecord
+  include Urls
   has_one_attached :image
 
   def valid_content?(text)
@@ -6,6 +7,6 @@ class Captcha < ApplicationRecord
   end
 
   def image_url
-    Rails.application.routes.url_helpers.url_for(image)
+    attachment_url(image)
   end
 end
